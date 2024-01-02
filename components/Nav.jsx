@@ -2,23 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Nav = () => {
-  // going to need two different navs depending on if user is signed in. The one below will be if a user is signed in. Use conditional rendering.
   return (
-    <nav>
+    <nav className="flex justify-between pt-5 px-3 bg-gray-800 h-20">
       <Link href='/'>
         <Image
-          src='../assets/logo.png'
+          src='/assets/images/logo.png'
           alt='Store logo'
-          width={50}
-          height={50}
+          width={40}
+          height={40}
         />
       </Link>
-      <article>
+      <article className="flex gap-3 mt-2">
         <Link href='/products'>
-          <p>Products</p>
+          <p className="nav--link">Products</p>
         </Link>
         <Link href='/categories'>
-          <p>Categories</p>
+          <p className="nav--link">Categories</p>
         </Link>
       </article>
     </nav>
