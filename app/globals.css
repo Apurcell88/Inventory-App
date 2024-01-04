@@ -13,3 +13,11 @@
   mb-1
   text-gray-400
 }
+
+/* ------ GAME CARD STYLES ------ */
+.game-card--info {
+  @apply
+  text-gray-400
+  px-2
+  my-2
+}

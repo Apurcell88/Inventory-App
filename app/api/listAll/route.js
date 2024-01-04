@@ -6,7 +6,6 @@ export const GET = async (req, res) => {
     await connectToDB();
 
     const games = await Game.find({});
-    console.log(games)
 
     return new Response(JSON.stringify(games), {
       status: 200
