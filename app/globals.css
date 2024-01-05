@@ -31,3 +31,37 @@
   rounded-md
   border-opacity-0
 }
+
+/* ------ CREATE GAME STYLES ------ */
+.create-game--label {
+  @apply
+  block mb-5
+}
+
+.create-game--span {
+  @apply
+text-gray-300 
+  text-lg
+}
+
+.create-game--input {
+  @apply
+  mt-1
+  pl-1
+  text-pink-800
+  w-48
+}
+
+.create-game--textarea {
+  @apply
+  h-24
+}
+
+.create-game--btn {
+  @apply
+  bg-pink-800 
+  text-gray-300 
+  w-20
+  h-10
+  relative
+}

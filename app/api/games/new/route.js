@@ -2,7 +2,7 @@ import { connectToDB } from "@/utils/database";
 import Game from "@/models/game";
 
 export const POST = async (req, res) => {
-  const { title, description, genre, stock } = await req.json();
+  const { title, description, genre, stock, platform } = await req.json();
 
   try {
     await connectToDB();
@@ -10,7 +10,8 @@ export const POST = async (req, res) => {
       title,
       description,
       genre,
-      stock
+      stock,
+      platform
     });
 
     // save to db

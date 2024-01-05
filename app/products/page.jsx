@@ -49,7 +49,7 @@ const Products = () => {
         <button
           className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8'
           onClick={() => {
-            router.push('/products/consoleForm')
+            router.push('/create-console')
           }}
         >
           Add Console

@@ -4,29 +4,27 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-const CreateGame = () => {
+const CreateConsole = () => {
   const router = useRouter();
 
-  const [game, setGame] = useState({
-    title: '',
+  const [console, setConsole] = useState({
+    company: '',
+    console: '',
     description: '',
-    genre: '',
-    platform: '',
     stock: 1
   })
 
-  const createGame = async (e) => {
+  const createConsole = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch('/api/games/new', {
+      const res = await fetch('/api/consoles/new', {
         method: 'POST',
         body: JSON.stringify({
-          title: game.title,
-          description: game.description,
-          genre: game.genre,
-          stock: game.stock,
-          platform: game.platform
+          company: console.company,
+          console: console.console,
+          description: console.description,
+          stock: console.stock
         })
       })
 
@@ -40,70 +38,57 @@ const CreateGame = () => {
 
   return (
     <section className='px-3 bg-gray-900 h-screen'>
-      <h1 className='text-center font-bold text-3xl pt-5 mb-7 text-gray-300'>Create a <span className='text-pink-800'>new game</span> for the store</h1>
+      <h1 className='text-center font-bold text-3xl pt-5 mb-7 text-gray-300'>Create a <span className='text-pink-800'>new console</span> for the store</h1>
       <form
-        onSubmit={createGame}
+        onSubmit={createConsole}
         className='w-1/2 m-auto'
       >
         <label className='create-game--label'>
-          <span className='create-game--span'>Game Title: </span>
+          <span className='create-game--span'>Console Company: </span>
           <input
             type="text"
-            value={game.title}
+            value={console.company}
             onChange={(e) => {
-              setGame({...game, title: e.target.value})
+              setConsole({...console, company: e.target.value})
             }}
             required
-            placeholder='Type game title...'
+            placeholder='Type console company...'
             className='create-game--input'
           />
         </label>
         <label className='create-game--label'>
-          <span className='create-game--span'>Game Description: </span>
-          <textarea
+          <span className='create-game--span'>Console Name: </span>
+          <input
             type="text"
-            value={game.description}
+            value={console.console}
             onChange={(e) => {
-              setGame({...game, description: e.target.value})
+              setConsole({...console, console: e.target.value})
             }}
             required
-            placeholder='Type game description...'
+            placeholder='Type console name...'
+            className='create-game--input'
+          />
+        </label>
+        <label className='create-game--label'>
+          <span className='create-game--span'>Console Description: </span>
+          <textarea
+            type="text"
+            value={console.description}
+            onChange={(e) => {
+              setConsole({...console, description: e.target.value})
+            }}
+            required
+            placeholder='Type console description...'
             className='create-game--input create-game--textarea'
           />
         </label>
         <label className='create-game--label'>
-          <span className='create-game--span'>Game Genre: </span>
-          <input
-            type="text"
-            value={game.genre}
-            onChange={(e) => {
-              setGame({...game, genre: e.target.value})
-            }}
-            required
-            placeholder='Type game genre...'
-            className='create-game--input'
-          />
-        </label>
-        <label className='create-game--label'>
-          <span className='create-game--span'>Game Platform: </span>
-          <input
-            type="text"
-            value={game.platform}
-            onChange={(e) => {
-              setGame({...game, platform: e.target.value})
-            }}
-            required
-            placeholder='Type game platform...'
-            className='create-game--input'
-          />
-        </label>
-        <label className='create-game--label'>
-          <span className='create-game--span'>Game Stock: </span>
+          <span className='create-game--span'>Console Stock: </span>
           <input
             type="number"
-            value={game.stock}
+            value={console.stock}
             onChange={(e) => {
-              setGame({...game, stock: e.target.value})
+              setConsole({...console, stock: e.target.value})
             }}
             required
             placeholder='Enter game stock...'
@@ -131,4 +116,4 @@ const CreateGame = () => {
   );
 }
  
-export default CreateGame;
+export default CreateConsole
