@@ -5,10 +5,11 @@ export const DELETE = async (req, { params }) => {
   try {
     await connectToDB();
 
-    await Game.findByIdAndDelete(params.id);
+    await Game.findByIdAndDelete(params.id)
+
 
     return new Response('Game has been deleted', { status: 200 });
   } catch (err) {
-    return new Response('Something went wrong', { status: 500 });
+    return new Response(`Error: ${err.message}`, { status: 500 });
   }
 }

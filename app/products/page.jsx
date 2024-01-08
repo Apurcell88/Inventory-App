@@ -34,6 +34,23 @@ const Products = () => {
 
     fetchConsoles();
   }, [consoles]);
+
+  const handleDelete = async (game) => {
+    const hasConfirmed = confirm('Are you sure you want to delete this game?') // confirm is built into the browser API
+
+    if (hasConfirmed) {
+      try {
+        await fetch(`/api/games/${game._id}`, {
+          method: 'DELETE'
+        });
+
+        const filteredPosts = games.filter((g) => g._id !== game._id);
+        setGames(filteredPosts);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  }
   
   return (
     <section className='bg-gray-900 h-full'>
@@ -67,6 +84,10 @@ const Products = () => {
           stock={game.stock}
           platform={game.platform}
           data={games}
+          setGames={setGames}
+          handleDelete={() => {
+            handleDelete(game);
+          }}
         />
       ))}
       {consoles.map((console) => (

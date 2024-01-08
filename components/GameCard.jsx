@@ -4,6 +4,7 @@ const GameCard = ({
   genre,
   platform,
   stock,
+  handleDelete,
   data
 }) => {
   return (
@@ -15,7 +16,12 @@ const GameCard = ({
       <p className="card-info">Stock: {stock}</p>
       <article className="flex justify-center gap-5">
         <button className="game-card--btn">Edit</button>
-        <button className="game-card--btn">Delete</button>
+        <button
+          className="game-card--btn"
+          onClick={handleDelete}
+        >
+          Delete
+        </button>
       </article>
     </section>
   );
