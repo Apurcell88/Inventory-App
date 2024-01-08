@@ -2,7 +2,8 @@ const ConsoleCard = ({
   company,
   console,
   stock,
-  desc
+  desc,
+  handleDelete
 }) => {
   return (
     <section className="text-center px-2 py-8 border-b-8 border-gray-600">
@@ -11,7 +12,12 @@ const ConsoleCard = ({
       <p className="card-info">Stock: {stock}</p>
       <article className="flex justify-center gap-5">
         <button className="game-card--btn">Edit</button>
-        <button className="game-card--btn">Delete</button>
+        <button
+          className="game-card--btn"
+          onClick={handleDelete}
+        >
+          Delete
+        </button>
       </article>
     </section>
   );

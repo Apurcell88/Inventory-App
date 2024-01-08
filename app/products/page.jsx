@@ -35,10 +35,10 @@ const Products = () => {
     fetchConsoles();
   }, [consoles]);
 
-  const handleDelete = async (game) => {
-    const hasConfirmed = confirm('Are you sure you want to delete this game?') // confirm is built into the browser API
-
-    if (hasConfirmed) {
+  const handleDeleteGame = async (game) => {
+    const password = prompt('Please enter password to delete.')
+    
+    if (password === process.env.NEXT_PUBLIC_PASSWORD) {
       try {
         await fetch(`/api/games/${game._id}`, {
           method: 'DELETE'
@@ -46,6 +46,23 @@ const Products = () => {
 
         const filteredPosts = games.filter((g) => g._id !== game._id);
         setGames(filteredPosts);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  }
+
+  const handleDeleteConsole = async (console) => {
+    const password = prompt('Please enter password to delete.')
+    
+    if (password === process.env.NEXT_PUBLIC_PASSWORD) {
+      try {
+        await fetch(`/api/consoles/${console._id}`, {
+          method: 'DELETE'
+        });
+
+        const filteredPosts = consoles.filter((c) => c._id !== console._id);
+        setConsoles(filteredPosts);
       } catch (err) {
         console.error(err);
       }
@@ -86,7 +103,7 @@ const Products = () => {
           data={games}
           setGames={setGames}
           handleDelete={() => {
-            handleDelete(game);
+            handleDeleteGame(game);
           }}
         />
       ))}
@@ -97,6 +114,9 @@ const Products = () => {
           console={console.console}
           stock={console.stock}
           desc={console.description}
+          handleDelete={() => {
+            handleDeleteConsole(console)
+          }}
         />
       ))}
     </section>
