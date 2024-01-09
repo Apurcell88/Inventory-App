@@ -52,6 +52,10 @@ const Products = () => {
     }
   }
 
+  const handleEdit = (game) => {
+    router.push(`/update-game?id=${game._id}`);
+  }
+
   const handleDeleteConsole = async (console) => {
     const password = prompt('Please enter password to delete.')
     
@@ -104,6 +108,9 @@ const Products = () => {
           setGames={setGames}
           handleDelete={() => {
             handleDeleteGame(game);
+          }}
+          handleEdit={() => {
+            handleEdit(game)
           }}
         />
       ))}

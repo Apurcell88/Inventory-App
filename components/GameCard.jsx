@@ -1,3 +1,5 @@
+// import Link from 'next/link';
+
 const GameCard = ({
   title,
   desc,
@@ -5,7 +7,7 @@ const GameCard = ({
   platform,
   stock,
   handleDelete,
-  data
+  handleEdit
 }) => {
   return (
     <section className="text-center px-2 py-8 border-b-8 border-gray-600">
@@ -15,7 +17,14 @@ const GameCard = ({
       <p className="card-info">Platform: {platform}</p>
       <p className="card-info">Stock: {stock}</p>
       <article className="flex justify-center gap-5">
-        <button className="game-card--btn">Edit</button>
+        
+        <button
+          className="game-card--btn"
+          onClick={handleEdit}
+        >
+          Edit
+        </button>
+        
         <button
           className="game-card--btn"
           onClick={handleDelete}
