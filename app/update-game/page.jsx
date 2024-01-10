@@ -1,18 +1,14 @@
 'use client';
-// change this so it works with games
 
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-
-// import Form from '@components/Form';
 
 const EditGame = () => {
   const router = useRouter();
   const searchParams = useSearchParams(); // lets you read the current URL's query string
   const gameId = searchParams.get('id');
 
-  // const [submitting, setSubmitting] = useState(false);
   const [game, setGame] = useState({
     title: '',
     description: '',
@@ -40,7 +36,6 @@ const EditGame = () => {
 
   const updateGame = async (e) => {
     e.preventDefault();
-    // setSubmitting(true);
 
     if (!gameId) return alert('Game ID not found');
 
@@ -145,7 +140,7 @@ const EditGame = () => {
             type="submit"
             className='create-game--btn'
           >
-            Create
+            Edit
           </button>
         </article>
       </form>

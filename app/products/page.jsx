@@ -52,7 +52,7 @@ const Products = () => {
     }
   }
 
-  const handleEdit = (game) => {
+  const handleEditGame = (game) => {
     router.push(`/update-game?id=${game._id}`);
   }
 
@@ -71,6 +71,10 @@ const Products = () => {
         console.error(err);
       }
     }
+  }
+
+  const handleEditConsole = (console) => {
+    router.push(`/update-console?id=${console._id}`);
   }
   
   return (
@@ -110,7 +114,7 @@ const Products = () => {
             handleDeleteGame(game);
           }}
           handleEdit={() => {
-            handleEdit(game)
+            handleEditGame(game)
           }}
         />
       ))}
@@ -123,6 +127,9 @@ const Products = () => {
           desc={console.description}
           handleDelete={() => {
             handleDeleteConsole(console)
+          }}
+          handleEdit={() => {
+            handleEditConsole(console)
           }}
         />
       ))}

@@ -5,7 +5,7 @@ export const GET = async (req, { params }) => {
   try {
     await connectToDB();
 
-    // filter out prompts
+    // filter out games
     const game = await Game.findById(params.id)
 
     if (!game) return new Response('Game not found', { status: 404 });
