@@ -65,3 +65,12 @@ text-gray-300
   h-10
   relative
 }
+
+/* ------ CATEGORIES STYLES ------ */
+.categories--btn {
+  @apply
+  text-gray-300
+  bg-purple-700
+  w-24
+  h-10
+}
