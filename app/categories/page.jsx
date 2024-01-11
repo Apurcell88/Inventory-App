@@ -45,8 +45,8 @@ const Categories = () => {
   }
 
   return (
-    <section className="bg-gray-900 h-screen">
-      <h1 className="text-gray-300 text-center text-2xl pt-5">Search By Category</h1>
+    <section className="bg-gray-900 h-full">
+      <h1 className="text-gray-300 text-center text-2xl pt-5 md:text-4xl pt-7">Search By Category</h1>
       <article className="flex justify-center gap-9 pt-10">
         <button
           className="categories--btn"
@@ -61,7 +61,7 @@ const Categories = () => {
             Consoles
         </button>
       </article>
-      <article>
+      <article className={gamesDisplay ? 'md:bg-gray-900 h-full' : ''} >
         {gamesDisplay ?
           games.map((game) => (
             <GameCard
@@ -72,7 +72,8 @@ const Categories = () => {
               platform={game.platform}
               stock={game.stock}
             />
-          )) : ''
+           
+          )): ''
         }
       </article>
       <article>

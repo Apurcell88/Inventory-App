@@ -81,7 +81,7 @@ const Products = () => {
     <section className='bg-gray-900 h-full'>
       <article className='flex justify-center gap-5 py-8'>
         <button
-          className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8'
+          className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8 md:w-32 h-14 text-xl'
           onClick={() => {
             router.push('/create-game')
           }}
@@ -89,7 +89,7 @@ const Products = () => {
           Add Game
         </button>
         <button
-          className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8'
+          className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8 md:w-32 h-14 text-xl'
           onClick={() => {
             router.push('/create-console')
           }}

@@ -10,8 +10,8 @@ const GameCard = ({
   handleEdit
 }) => {
   return (
-    <section className="text-center px-2 py-8 border-b-8 border-gray-600 bg-gray-900">
-      <h2 className="text-3xl text-pink-700 font-semibold">{title}</h2>
+    <section className="text-center px-2 py-8 border-b-8 border-gray-600 bg-gray-900 mx-auto md:max-w-lg">
+      <h2 className="text-3xl md:text-4xl text-pink-700 font-semibold">{title}</h2>
       <p className="card-info">{desc}</p>
       <p className="card-info">Genre: {genre}</p>
       <p className="card-info">Platform: {platform}</p>

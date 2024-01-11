@@ -6,12 +6,14 @@
 .nav--link {
   @apply
   text-gray-400
+  md:text-xl pt-3 pr-3
 }
 
 .nav--description {
   @apply
   mb-1
   text-gray-400
+  md:text-lg
 }
 
 /* ------ GAME CARD STYLES ------ */
@@ -20,6 +22,7 @@
   text-gray-400
   px-2
   my-4
+  md:text-xl
 }
 
 .game-card--btn {
@@ -30,12 +33,14 @@
   text-gray-300
   rounded-md
   border-opacity-0
+  md:w-32 text-lg
 }
 
 /* ------ CREATE GAME STYLES ------ */
 .create-game--label {
   @apply
   block mb-5
+  md:pl-7
 }
 
 .create-game--span {

@@ -62,7 +62,7 @@ const EditConsole = () => {
       <h1 className='text-center font-bold text-3xl pt-5 mb-7 text-gray-300'><span className='text-pink-800'>Edit console</span> for the store</h1>
       <form
         onSubmit={updateConsole}
-        className='w-1/2 m-auto'
+        className='w-1/2 m-auto md:w-1/3 pt-3'
       >
         <label className='create-game--label'>
           <span className='create-game--span'>Company: </span>
@@ -113,7 +113,7 @@ const EditConsole = () => {
           />
         </label>
 
-        <article className='flex justify-center gap-8 absolute'>
+        <article className='flex justify-center gap-8 absolute md:pl-7'>
           <Link
              href='/products'
           >
