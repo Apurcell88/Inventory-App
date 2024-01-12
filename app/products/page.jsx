@@ -9,7 +9,6 @@ const Products = () => {
   // STATE
   const [games, setGames] = useState([]);
   const [consoles, setConsoles] = useState([]);
-  const [accessories, setAccessories] = useState([]);
 
   const router = useRouter();
 
@@ -79,9 +78,9 @@ const Products = () => {
   
   return (
     <section className='bg-gray-900 h-full'>
-      <article className='flex justify-center gap-5 py-8'>
+      <article className='flex justify-center gap-5 py-8 md:gap-7'>
         <button
-          className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8 md:w-32 h-14 text-xl'
+          className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8 md:w-32 md:h-16 text-xl'
           onClick={() => {
             router.push('/create-game')
           }}
@@ -89,7 +88,7 @@ const Products = () => {
           Add Game
         </button>
         <button
-          className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8 md:w-32 h-14 text-xl'
+          className='text-sm bg-purple-700 text-gray-200 rounded-lg w-30 px-2 h-8 md:w-32 md:h-16 md:text-xl'
           onClick={() => {
             router.push('/create-console')
           }}

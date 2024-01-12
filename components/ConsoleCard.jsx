@@ -8,7 +8,7 @@ const ConsoleCard = ({
 }) => {
   return (
     <section className="text-center px-2 py-8 border-b-8 border-gray-600 bg-gray-900 md:max-w-lg mx-auto">
-      <h2 className="text-3xl text-pink-700 font-semibold">{company} {console}</h2>
+      <h2 className="text-3xl text-pink-700 font-semibold md:text-4xl">{company} {console}</h2>
       <p className="card-info">{desc}</p>
       <p className="card-info">Stock: {stock}</p>
       <article className="flex justify-center gap-5">

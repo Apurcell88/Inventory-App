@@ -37,7 +37,6 @@ const EditConsole = () => {
 
     if (!consoleId) return alert('Console ID not found');
 
-    // Update game
     try {
       const res = await fetch(`/api/consoles/${consoleId}`, {
         method: 'PATCH',
@@ -59,13 +58,13 @@ const EditConsole = () => {
 
   return (
     <section className='px-3 bg-gray-900 h-screen'>
-      <h1 className='text-center font-bold text-3xl pt-5 mb-7 text-gray-300'><span className='text-pink-800'>Edit console</span> for the store</h1>
+      <h1 className='text-center font-bold text-3xl pt-5 mb-7 text-gray-300 xl:text-5xl'><span className='text-pink-800'>Edit console</span> for the store</h1>
       <form
         onSubmit={updateConsole}
-        className='w-1/2 m-auto md:w-1/3 pt-3'
+        className='w-1/2 m-auto md:w-1/3 md:pt-3 lg:w-1/5 xl:w-1/6'
       >
         <label className='create-game--label'>
-          <span className='create-game--span'>Company: </span>
+          <span className='create-game--span'>Company Name: </span>
           <input
             type="text"
             value={consoleData.company}
@@ -77,7 +76,7 @@ const EditConsole = () => {
           />
         </label>
         <label className='create-game--label'>
-          <span className='create-game--span'>Console: </span>
+          <span className='create-game--span'>Console Name: </span>
           <input
             type="text"
             value={consoleData.console}

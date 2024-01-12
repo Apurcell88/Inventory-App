@@ -11,7 +11,6 @@ const Categories = () => {
   const [gamesDisplay, setGamesDisplay] = useState(false);
   const [consolesDisplay, setConsolesDisplay] = useState(false)
 
-  // make call to API endpoint to GET games/consoles depending which button is clicked
   useEffect(() => {
     const fetchGames = async () => {
       const res = await fetch('/api/games');
