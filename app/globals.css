@@ -78,5 +78,5 @@ text-gray-300
   bg-purple-700
   w-24
   h-10
-  md:w-32 h-16 text-xl
+  md:w-32 md:h-16 md:text-xl
 }
