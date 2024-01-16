@@ -21,7 +21,7 @@ const Products = () => {
     }
 
     fetchGames();
-  }, []);
+  }, [games]);
 
   useEffect(() => {
     const fetchConsoles = async () => {
