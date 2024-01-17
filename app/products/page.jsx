@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import GameCard from '@/components/GameCard';
 import ConsoleCard from '@/components/ConsoleCard';
+import { GET } from '../api/games/route';
 
 const Products = () => {
   // STATE
@@ -45,6 +46,7 @@ const Products = () => {
 
         const filteredPosts = games.filter((g) => g._id !== game._id);
         setGames(filteredPosts);
+        GET(); // this is new
       } catch (err) {
         console.error(err);
       }
