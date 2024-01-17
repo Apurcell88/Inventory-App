@@ -21,7 +21,7 @@ const Products = () => {
       setGames(data);
     }
 
-    fetchGames();
+    setInterval(fetchGames(), 1000); // setInterval is new
   }, [games]);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Products = () => {
 
         const filteredPosts = games.filter((g) => g._id !== game._id);
         setGames(filteredPosts);
-        GET(); // this is new
+       // await GET(); // this is new
       } catch (err) {
         console.error(err);
       }
