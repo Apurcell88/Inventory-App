@@ -21,7 +21,8 @@ const Products = () => {
       setGames(data);
     }
 
-    setInterval(fetchGames(), 1000); // setInterval is new
+    //setInterval(fetchGames(), 1000); // setInterval is new
+    fetchGames();
   }, [games]);
 
   useEffect(() => {
